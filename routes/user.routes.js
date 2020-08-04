@@ -15,4 +15,8 @@ router.get("/:id", function(req, res) {
   UserController.getUserById(req, res);
 });
 
+router.put("/:id", function(req, res) {
+  UserController.updateUser(req, res);
+});
+
 module.exports = router;

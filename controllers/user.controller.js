@@ -44,6 +44,24 @@ class UserController {
       res.status(400).send({ success: false, error: "Ops! Ocorreu um erro" });
     }
   }
+
+  updateUser (req, res) {
+    const { id } = req.params;
+    const { user } = req.body;
+    
+    try {
+      const userToUpdate = this.userDAO.getById(id);
+
+      const userModel = new UserModel(Object.assign(userToUpdate, user));
+      // const userModel = new UserModel({ ...userToUpdate, ...user });
+
+      const userUpdated = this.userDAO.update(id, userModel);
+
+      res.send({ success: true, user: userUpdated });
+    } catch (error) {
+      res.status(400).send({ success: false, error: "Ops! Ocorreu um erro" });
+    }
+  }
 }
 
 module.exports = new UserController();
