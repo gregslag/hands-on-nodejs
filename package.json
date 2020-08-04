@@ -1,0 +1,31 @@
+{
+  "name": "hands-on-nodejs-ages",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node_modules/.bin/nodemon -e js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gregslag/hands-on-nodejs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gregslag/hands-on-nodejs/issues"
+  },
+  "homepage": "https://github.com/gregslag/hands-on-nodejs#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fs-extra": "^9.0.1",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  }
+}
