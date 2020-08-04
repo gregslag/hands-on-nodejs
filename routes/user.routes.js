@@ -7,4 +7,12 @@ router.post("/", function(req, res) {
   UserController.insertUser(req, res);
 });
 
+router.get("/", function(req, res) {
+  UserController.getAllUsers(req, res);
+});
+
+router.get("/:id", function(req, res) {
+  UserController.getUserById(req, res);
+});
+
 module.exports = router;

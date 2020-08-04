@@ -22,6 +22,28 @@ class UserController {
       res.status(400).send({ success: false, error: "Ops! Ocorreu um erro" });
     }
   }
+
+  getAllUsers (req, res) {
+    try {
+      const users = this.userDAO.getAll();
+
+      res.send({ success: true, users });
+    } catch (error) {
+      res.status(400).send({ success: false, error: "Ops! Ocorreu um erro" });
+    }
+  }
+
+  getUserById (req, res) {
+    const { id } = req.params;
+
+    try {
+      const user = this.userDAO.getById(id);
+
+      res.send({ success: true, user });
+    } catch (error) {
+      res.status(400).send({ success: false, error: "Ops! Ocorreu um erro" });
+    }
+  }
 }
 
 module.exports = new UserController();
