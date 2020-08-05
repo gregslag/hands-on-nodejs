@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "655a3fac-2a1d-4051-b198-f4281cbe59c4",
+		"name": "requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n      \"name\": \"joao\",\n      \"register\": \"171110992\",\n      \"course\": \"React\",\n      \"birthDate\": \"2017-08-09\",\n      \"cep\": \"94965240\",\n      \"address\": \"rua holanda\",\n      \"number\": \"1711\",\n      \"address_detail\": \"\",\n      \"district\": \"Marechal Rondon\",\n      \"status\": true,\n      \"image\": \"/assets/teste.png\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/v1/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/v1/user?name_like=jo&status_like=false&course_like=React",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"user"
+					],
+					"query": [
+						{
+							"key": "name_like",
+							"value": "jo"
+						},
+						{
+							"key": "status_like",
+							"value": "false"
+						},
+						{
+							"key": "course_like",
+							"value": "React"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/v1/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n      \"name\": \"pedro\",\n      \"register\": \"171110992\",\n      \"course\": \"React\",\n      \"birthDate\": \"2017-08-09\",\n      \"cep\": \"94965240\",\n      \"address\": \"rua holanda\",\n      \"number\": \"1711\",\n      \"address_detail\": \"\",\n      \"district\": \"Marechal Rondon\",\n      \"status\": true,\n      \"image\": \"/assets/teste.png\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/v1/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/v1/user/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add user image",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "l49wI_Ri7/hands_On_Ages (1).png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/v1/user/1/image",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"1",
+						"image"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
